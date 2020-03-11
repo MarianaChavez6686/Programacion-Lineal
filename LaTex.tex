@@ -1,0 +1,64 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+
+\title{Método simplex}
+\author{Chino Chávez}
+\begin{document}
+
+\maketitle
+\section{Introducción}
+\label{sec:introduccion}
+
+El método simplex es un algoritmo para resolver problemas de
+programación lineal. Fue inventado por el matemático George Dantzing
+en el año 1947
+\section{Ejemplo}
+\label{sec:ejemplo}
+
+Ilustraremos la aplicacion del método simplex con un ejemplo:
+
+\begin{equation*}
+  \begin{aligned}
+\text{Maximizar} \quad & 2x+2y\\
+\text{Sujeto a} \quad &
+   \begin{aligned}
+2x+y &\leq 4\\
+x+2y &\leq 5\\
+-2x+y &\geq 2\\
+x,y &\geq 0
+   \end{aligned}
+\end{aligned}
+\end{equation*}
+Se puede observar que este problema no esta en forma éstandar por lo
+que lo primero que haremos es tenerlo en esa forma, para ello debemos
+poner todas las ecuaciones con $\leq$.
+\begin{equation*}
+  \begin{aligned}
+\text{Maximizar} \quad & 2x+2y\\
+\text{Sujeto a} \quad &
+   \begin{aligned}
+2x+y &\leq 4\\
+x+2y &\leq 5\\
+2x-y &\leq -2\\
+x,y &\geq 0
+   \end{aligned}
+\end{aligned}
+\end{equation*}
+Ahora para igualar las desigualdades colocaremos las variables de
+holgura,entonces el ploblema sería de la siguiente forma.
+\begin{equation*}
+  \begin{aligned}
+\text{Maximizar} \quad & 2x+2y\\
+\text{Sujeto a} \quad &
+   \begin{aligned}
+     2x+y+z\phantom{+w}\phantom{+v} &= 4\\
+x+2y\phantom{+z}+w\phantom{+v} &= 5\\
+2x-y\phantom{+z}\phantom{+w}+v &= -2\\
+x,y,z,w,v &\geq 0
+ \end{aligned}
+\end{aligned}
+\end{equation*}
+\end{document}
